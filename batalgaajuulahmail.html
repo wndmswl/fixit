@@ -49,32 +49,39 @@
     </div>
 
     <script>
-        let code = [];
-        const boxes = document.querySelectorAll('.otp-box');
+            let code = [];
+    const boxes = document.querySelectorAll('.otp-box');
 
-        function pressKey(num) {
-            if (code.length < 6) {
-                code.push(num);
-                updateBoxes();
+    function pressKey(num) {
+        if (code.length < 6) {
+            code.push(num);
+            updateBoxes();
+
+            // Trigger the move to the next page when the 6th digit is reached
+            if (code.length === 6) {
+                setTimeout(() => {
+                    // This moves the user to your password entry screen
+                    window.location.href = "shinenuutsug.html"; 
+                }, 1000); // 0.3 second delay so the user sees the 6th number
             }
         }
+    }
 
-        function deleteKey() {
-            code.pop();
-            updateBoxes();
-        }
+    function deleteKey() {
+        code.pop();
+        updateBoxes();
+    }
 
-        function updateBoxes() {
-            boxes.forEach((box, index) => {
-                box.innerText = code[index] || "";
-                // Adds a blue border if the box has a number
-                if (code[index]) {
-                    box.classList.add('filled');
-                } else {
-                    box.classList.remove('filled');
-                }
-            });
-        }
+    function updateBoxes() {
+        boxes.forEach((box, index) => {
+            box.innerText = code[index] || "";
+            if (code[index]) {
+                box.classList.add('filled');
+            } else {
+                box.classList.remove('filled');
+            }
+        });
+    }
     </script>
 </body>
 </html>
