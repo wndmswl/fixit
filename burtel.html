@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бүртгүүлэх</title>
+    <link rel="stylesheet" href="burtgelstyle.css">
+</head>
+<body>
+    <div class="iphone-frame">
+        <div class="content-wrapper">
+            <h1 class="main-title">Бүртгүүлэх</h1>
+
+            <div class="form-container">
+                <label>Регистрийн дугаар</label>
+                <div class="reg-container">
+                    <input type="text" placeholder="Р" class="reg-char">
+                    <input type="text" placeholder="Д" class="reg-char">
+                    <input type="text" placeholder="Регистрийн дугаар" class="reg-num">
+                </div>
+
+                <label>Овгоо оруулна уу</label>
+                <input type="text" placeholder="Овгоо оруулах" class="full-input">
+
+                <label>Нэрээ оруулна уу</label>
+                <input type="text" placeholder="Нэрээ оруулах" class="full-input">
+
+                <label>Амьдардаг дүүрэг</label>
+                <select class="full-input select-box">
+                    <option value="" disabled selected>Дүүргээ сонгох</option>
+                    <option value="baganuur">Багануур</option>
+                    <option value="bagahangai">Багахангай</option>
+                    <option value="bayangol">Баянгол</option>
+                    <option value="baynzurh">Баянзүрх</option>
+                    <option value="nalaih">Налайх</option>
+                    <option value="songinohairhan">Сонгинохайрхан</option>
+                    <option value="suhbaatar">Сүхбаатар</option>
+                    <option value="hanuul">Хан-Уул</option>
+                    <option value="chingeltei">Чингэлтэй</option>
+                </select>
+
+                <label>Нууц үг</label>
+                <div class="pass-wrapper">
+                    <input type="password" placeholder="Нууц үгээ оруулах" class="full-input pass-input">
+                </div>
+
+                <label>Нууц үг давтан оруулах</label>
+                <div class="pass-wrapper">
+                    <input type="password" placeholder="Нууц үгээ давтан оруулах" class="full-input pass-input">
+                </div>
+                
+            <div class="registration-container">
+                <div class="checkbox-box-wrapper"> <input type="checkbox" id="terms-checkbox" class="custom-checkbox">
+                    <label for="terms-checkbox" class="checkbox-label">
+                        <span class="open-modal-link" onclick="toggleModal(true)">Үйлчилгээний нөхцөлийг</span> зөвшөөрч байна
+                    </label>
+                </div>
+            </div>
+
+            <div id="terms-modal" class="modal-overlay">
+                <div class="modal-card">
+                    <h2 class="modal-title">ХУВИЙН МЭДЭЭЛЭЛ БОЛОВСРУУЛАХ ЗӨВШӨӨРӨЛ</h2>
+                    <div class="modal-body">
+                        <p><strong>Нэг. Нийтлэг үндэслэл</strong></p>
+                        <p>1.1 Энэхүү зөвшөөрлийн зорилго нь хэрэглэгчийг платформд бүртгэх, насны шалгуур баталгаажуулах, бүртгэлийн мэдээллийг боловсруулахтай холбоотой харилцааг зохицуулахад оршино.</p>
+                        <p>1.2 Хэрэглэгч бүртгүүлэхдээ энэхүү зөвшөөрлийн нөхцөлтэй танилцаж, зөвшөөрсөнд тооцно.</p>
+                        <p><strong>Хоёр. Цуглуулах мэдээлэл</strong></p>
+                        <p>2.1 Платформ нь бүртгэлийн явцад дараах мэдээллийг авч болно:</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn-modal btn-bolikh" onclick="toggleModal(false)">Болих</button>
+                        <button class="btn-modal btn-zuvshuuruh" onclick="acceptTerms()">Зөвшөөрөх</button>
+                    </div>
+                </div>
+            </div>
+
+                <a href="nevtreh.html"><button class="action-btn">Бүртгүүлэх</button></a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleModal(show) {
+            const modal = document.getElementById('terms-modal');
+            modal.style.display = show ? 'flex' : 'none';
+        }
+        function acceptTerms() {
+            document.getElementById('terms-checkbox').checked = true;
+            toggleModal(false);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sasa App</title>
+    <link rel="stylesheet" href="burtguulehstyle.css">
+</head>
+<body>
+    <div class="iphone-frame">
+        <div class="content-wrapper">
+            <div class="back-button">
+                <a href="nevtreh.html">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1a3a6d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                </a>
+            </div>
+
+            <h1 class="main-title">Бүртгүүлэх</h1> 
+
+            <div class="tab-container">
+                <a href="#" class="tab active"><div>Дугаар</div></a>
+                <a href="burtguulehmail.html" class="tab"><div>И-мэйл</div></a>
+            </div>
+
+            <div id="phone-view">
+                <div class="input-display" id="display">+976&nbsp;</div>
+                <div class="keypad">
+                    <div class="key" onclick="appendNumber('1')">1</div>
+                    <div class="key" onclick="appendNumber('2')">2</div>
+                    <div class="key" onclick="appendNumber('3')">3</div>
+                    <div class="key" onclick="appendNumber('4')">4</div>
+                    <div class="key" onclick="appendNumber('5')">5</div>
+                    <div class="key" onclick="appendNumber('6')">6</div>
+                    <div class="key" onclick="appendNumber('7')">7</div>
+                    <div class="key" onclick="appendNumber('8')">8</div>
+                    <div class="key" onclick="appendNumber('9')">9</div>
+                    <div class="key empty"></div>
+                    <div class="key" onclick="appendNumber('0')">0</div>
+                    <div class="key delete" onclick="deleteNumber()">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/>
+                            <line x1="18" y1="9" x2="12" y2="15"/><line x1="12" y1="9" x2="18" y2="15"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <a href="burtel.html"><button class="action-btn">Үргэлжлүүлэх</button></a>
+        </div>
+    </div>
+    <script>
+        const display = document.getElementById('display');
+        const prefix = "+976\u00A0"; 
+        window.onload = () => {
+            display.innerText = prefix;
+        };
+        function appendNumber(num) {
+            let current = display.innerText;
+            if (current.length < 13) {
+                display.innerText = current + num;
+            }
+        }
+        function deleteNumber() {
+            let currentText = display.innerText;
+            if (currentText.length > 5) {
+                display.innerText = currentText.substring(0, currentText.length - 1);
+            }
+        }
+    </script>
+</body>
+</html>

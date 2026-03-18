@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нууц үг оруулах</title>
+    <link rel="stylesheet" href="shine.css">
+</head>
+<body>
+
+    <div class="iphone-frame">
+        <div class="wrapper">
+            <div class="back-btn">
+                <a href="nuutsugsergeeh.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1a3a6d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 18l-6-6 6-6"/></svg></a>
+            </div>
+            
+            <h1 class="title">Нууц үгээ солих</h1>
+
+            <div class="input-section">
+                <label>Шинэ нууц үг</label>
+                <div class="field">
+                    <input type="password" placeholder="Шинэ нууц үгээ оруулна уу">
+                </div>
+
+                <label>Шинэ нууц үг давтан оруулах</label>
+                <div class="field">
+                    <input type="password" placeholder="Шинэ нууц үгээ давтан оруулна уу">
+                </div>
+            </div>
+
+            <a href="nevtreh.html"><button class="main-button">Үргэлжлүүлэх</button></a>
+        </div>
+    </div>
+    <script>
+    function pressKey(num) {
+    if (code.length < 6) {
+        code.push(num);
+        updateBoxes();
+
+        if (code.length === 6) {
+            // Leave a "sticky note" for the next page
+            localStorage.setItem('resetDone', 'yes');
+
+            setTimeout(() => {
+                window.location.href = "nuutsugoruulah.html"; 
+            }, 300); 
+        }
+    }
+}</script>
+</body>
+</html>

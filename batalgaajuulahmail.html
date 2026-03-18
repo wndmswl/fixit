@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Баталгаажуулах</title>
+    <link rel="stylesheet" href="batal.css">
+</head>
+<body>
+    <div class="iphone-frame">
+        <div class="content-wrapper">
+            <div class="back-button">
+                <a href="nuutsugsergeehmail.html"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1a3a6d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></a>
+            </div>
+
+            <h1 class="main-title">Баталгаажуулах</h1>
+            <p class="subtitle">Цахим хаягт ирсэн баталгаажуулах кодоо оруулна уу.</p>
+
+            <div class="otp-container">
+                <div class="otp-box"></div>
+                <div class="otp-box"></div>
+                <div class="otp-box"></div>
+                <div class="otp-box"></div>
+                <div class="otp-box"></div>
+                <div class="otp-box"></div>
+            </div>
+            
+            <p class="resend-text">Дахин код авах</p>
+
+            <div class="keypad">
+                <div class="key" onclick="pressKey('1')">1</div>
+                <div class="key" onclick="pressKey('2')">2</div>
+                <div class="key" onclick="pressKey('3')">3</div>
+                <div class="key" onclick="pressKey('4')">4</div>
+                <div class="key" onclick="pressKey('5')">5</div>
+                <div class="key" onclick="pressKey('6')">6</div>
+                <div class="key" onclick="pressKey('7')">7</div>
+                <div class="key" onclick="pressKey('8')">8</div>
+                <div class="key" onclick="pressKey('9')">9</div>
+                <div class="key empty"></div>
+                <div class="key" onclick="pressKey('0')">0</div>
+                <div class="key delete" onclick="deleteKey()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/><line x1="18" y1="9" x2="12" y2="15"/><line x1="12" y1="9" x2="18" y2="15"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let code = [];
+        const boxes = document.querySelectorAll('.otp-box');
+
+        function pressKey(num) {
+            if (code.length < 6) {
+                code.push(num);
+                updateBoxes();
+            }
+        }
+
+        function deleteKey() {
+            code.pop();
+            updateBoxes();
+        }
+
+        function updateBoxes() {
+            boxes.forEach((box, index) => {
+                box.innerText = code[index] || "";
+                // Adds a blue border if the box has a number
+                if (code[index]) {
+                    box.classList.add('filled');
+                } else {
+                    box.classList.remove('filled');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

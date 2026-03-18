@@ -1,0 +1,137 @@
+* { box-sizing: border-box; font-family: -apple-system, sans-serif; }
+body {     background-color: black; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+
+.iphone-frame {
+    width: 402px; height: 874px;
+    background: linear-gradient(145deg, #FFFFFF, #BADDE3, #B9E1E7);
+    border-radius: 50px; position: relative; overflow-y: auto; overflow-x: hidden;
+    padding-bottom: 40px;
+}
+
+.iphone-frame::before {
+    content: ""; position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.3; z-index: 1; pointer-events: none;
+}
+
+.content-wrapper { width: 85%; margin: 60px auto 0; z-index: 2; position: relative; }
+
+.main-title { color: #1a3a6d; font-size: 28px; text-align: left; margin-bottom: 30px; }
+
+.form-container label {
+    display: block; color: #4a6fa5; font-size: 14px; margin-bottom: 8px; text-align: left;
+}
+
+/* Inputs */
+.full-input, .reg-char, .reg-num {
+    width: 100%; padding: 14px; border-radius: 12px;
+    border: 1px solid #1a3a6d; background: rgba(224, 242, 245, 0.8);
+    color: #1a3a6d; margin-bottom: 20px; outline: none;
+}
+
+/* Registry Number Special Row */
+.reg-container { display: flex; gap: 8px; margin-bottom: 20px; }
+.reg-char { width: 45px; text-align: center; margin-bottom: 0; }
+.reg-num { margin-bottom: 0; flex: 1; }
+
+/* Selection Box */
+.select-box {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%231a3a6d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 15px center;
+}
+
+/* Password Wrappers */
+.pass-wrapper { position: relative; margin-bottom: 20px; }
+.pass-input { padding-left: 15px; padding-right: 40px; margin-bottom: 0; }
+
+/* Checkbox */
+/* Container to align checkbox and text */
+.checkbox-box-wrapper {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid #1a3a6d;
+    background: rgba(224, 242, 245, 0.8); /* Matches your other inputs */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px; /* Space before the Register button */
+}
+
+.custom-checkbox {
+    width: 20px;
+    height: 20px;
+    accent-color: #344a82;
+    cursor: pointer;
+}
+
+.checkbox-label {
+    font-size: 13.5px;
+    color: #1a3a6d;
+    cursor: pointer;
+}
+
+/* The clickable link part */
+.terms-link {
+    color: #1a3a6d;
+    text-decoration: underline;
+    font-weight: 600;
+}
+.action-btn {
+    width: 100%; padding: 18px; background: #344a82; color: white;
+    border: none; border-radius: 12px; font-size: 18px; font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(52, 74, 130, 0.3); 
+}
+/* Dark blurred background */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px); /* Creates the frosted glass effect from your pic */
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* The white box */
+.modal-card {
+    width: 340px;
+    background: white;
+    border-radius: 30px;
+    padding: 30px 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.open-modal-link {
+    text-decoration: underline;
+    font-weight: bold;
+    color: #1a3a6d;
+    cursor: pointer;
+}
+.btn-bolikh {
+    background: #ffffff;
+    border: #344a82 1px solid;
+    color: #344a82;
+    padding: 10px 15px 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.btn-zuvshuuruh {
+    background: #344a82;
+    color: #ffffff;
+    padding: 10px 15px 10px 15px;
+    border-radius: 20px;
+    border: #344a82 1px solid;
+    cursor: pointer;
+}
+.modal-footer {
+    display: flex;
+    gap: 15px; /* Space between buttons */
+    margin-top: 20px;
+    justify-content: center;
+}
